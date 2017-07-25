@@ -22,9 +22,9 @@ public class HanoiGame
 		return numberOfDiscs;
 	}
 //---------------------------------------------------------
-	public void generateSticks(int nod,Disc stick1[], Disc stick2[], Disc stick3[])
+	public void generateSticks(int nod,Disc stick1[], Disc stick2[], Disc stick3[], Disc stickWin[])
 	{
-		int hv = numberOfDiscs;
+		int hv = nod;
 		
 		 for (int n=0 ; n<numberOfDiscs ; n++)
 		 {
@@ -36,6 +36,9 @@ public class HanoiGame
 			 
 			 stick3[n] = new Disc();
 			 stick3[n].numberD = 0;
+			 
+			 stickWin[n] = new Disc();
+			 stickWin[n].numberD = hv;
 			 
 			 hv--;
 		 }
@@ -63,6 +66,37 @@ public class HanoiGame
 		{
 			System.out.print(" " + stick3[n].getNumber());
 		}
+	}
+//---------------------------------------------------------
+	public void showWinStick(Disc stick[])
+	{
+		// STICK WIN
+		System.out.print("STICK WIN -");
+		for (int n=0; n<stick.length; n++)
+		{
+			System.out.print(" " + stick[n].getNumber());
+		}
+		
+	}
+//---------------------------------------------------------
+	public boolean comparisonSticks(Disc[] st1, Disc[] st2)
+	{
+		int x = 0;
+		for (int i=0; i<st1.length ; i++)
+		{
+			if (st1[i].getNumber() != st2[i].getNumber())
+				{
+				x=0;
+				}	
+			else
+			{
+				x=1;
+			}
+		}
+		if (x==1)
+			return true;
+		else
+			return false;
 	}
 //------------------------GAME-----------------------------
 	/*public void moveDisc(int a, int b)

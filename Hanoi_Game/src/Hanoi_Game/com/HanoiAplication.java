@@ -1,5 +1,5 @@
 package Hanoi_Game.com;
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.Scanner;
 //import java.util.ArrayList;
 //import java.util.*;
@@ -26,33 +26,49 @@ public class HanoiAplication {
 		Disc[] stick3 = new Disc[Game.getNumberOfDiscs()];
 		
 		Disc[] stickWin = new Disc[Game.getNumberOfDiscs()];
-		System.arraycopy(stick1, 0, stickWin, 0, stick1.length);
+		
 //---------------------------------------------------------
 		System.out.println("THE GAME WILL BEGIN");
 		//System.out.println(Game.getNumberOfDiscs());
-		Game.generateSticks(Game.getNumberOfDiscs(), stick1, stick2, stick3);
+		Game.generateSticks(Game.getNumberOfDiscs(), stick1, stick2, stick3, stickWin);
+		//System.arraycopy(stick1, 0, stickWin, 0, stick1.length);
 		Game.showSticks(stick1,stick2,stick3);
 //---------------------------------------------------------		
-		/*if(Arrays.equals(stick2, stickWin))
-			System.out.println("Congratulations. You win!");
-		else if(Arrays.equals(stick3, stickWin))
-			System.out.println("Congratulations. You win!");
-		else
+		/*int x = 0;
+		
+		do 
 		{
-			int fv;
-			int sv;
 			
-		}*/
-//---------------------------------------------------------
+			System.out.println("xxxxxx");
+			
+			if ((Arrays.equals(stickWin, stick2)) || Arrays.equals(stickWin, stick3))
+			x = 1;
+			else
+			x=0;
+		}
+		while (x > 0);
+			{
+				System.out.println("\nCongratulations. You win!");
+			};*/
+		
+		
+		boolean resoult = false;
 		do
 		{
-			//operacje do wykonania
+			
+			if(Game.comparisonSticks(stick2, stickWin) || Game.comparisonSticks(stick3, stickWin))
+				{resoult = true;}
+			else
+				{resoult = false;}
+			System.out.println("Komunikat");
+			int zmienna = write.nextInt();
 		}
-		while ((Arrays.equals(stick2, stickWin)) || Arrays.equals(stick3, stickWin));
+		while (resoult == true);
 		{
-			System.out.println("Congratulations. You win!");
-		}
+			System.out.println("\nCongratulations. You win!");
+		};
 //---------------------------------------------------------
+		Game.showWinStick(stickWin);
 		write.close();
 	}
 
