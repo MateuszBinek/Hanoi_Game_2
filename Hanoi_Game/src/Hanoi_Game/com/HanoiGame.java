@@ -1,16 +1,12 @@
 package Hanoi_Game.com;
 import java.util.ArrayList;
+import java.util.*;
 
 public class HanoiGame 
 {
 	String userName;
-	int numberOfDiscs;
-	Disc[] stick1 = new Disc[numberOfDiscs];
-	Disc[] stick2 = new Disc[numberOfDiscs];
-	Disc[] stick3 = new Disc[numberOfDiscs];
-	
-	
-	
+	private int numberOfDiscs;
+//---------------------------------------------------------
 	void setUserName(String name)
 	{
 		userName = name;
@@ -25,26 +21,52 @@ public class HanoiGame
 	{
 		return numberOfDiscs;
 	}
-	
-	public void generateSticks(int nod)
+//---------------------------------------------------------
+	public void generateSticks(int nod,Disc stick1[], Disc stick2[], Disc stick3[])
 	{
-		 for (int i=0 ; i<nod ; i++)
+		int hv = numberOfDiscs;
+		
+		 for (int n=0 ; n<numberOfDiscs ; n++)
 		 {
-			 stick1[i] = new Disc();
-			 stick1[i].numberD = i+1;
+			 stick1[n] = new Disc();
+			 stick1[n].numberD = hv;
 			 
-			 stick2[i] = new Disc();
+			 stick2[n] = new Disc();
+			 stick2[n].numberD = 0;
 			 
-			 stick3[i] = new Disc();
+			 stick3[n] = new Disc();
+			 stick3[n].numberD = 0;
+			 
+			 hv--;
 		 }
 	}
-	
-	public void showSticks(int nod)
+//---------------------------------------------------------
+	public void showSticks(Disc stick1[], Disc stick2[], Disc stick3[])
 	{
-		for (int i=0; i<nod; i++)
+		// STICK 1
+		System.out.print("STICK 1 -");
+		for (int n=0; n<stick1.length; n++)
 		{
-			System.out.print(stick1[i].numberD);
+			System.out.print(" " + stick1[n].getNumber());
+		}
+		
+		// STICK 2
+		System.out.print("\nSTICK 2 -");
+		for (int n=0; n<stick2.length; n++)
+		{
+			System.out.print(" " + stick2[n].getNumber());
+		}
+		
+		// STICK 3
+		System.out.print("\nSTICK 3 -");
+		for (int n=0; n<stick3.length; n++)
+		{
+			System.out.print(" " + stick3[n].getNumber());
 		}
 	}
-	
+//------------------------GAME-----------------------------
+	public void play()
+	{
+		
+	}
 }
