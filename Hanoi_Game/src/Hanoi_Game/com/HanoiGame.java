@@ -1,6 +1,6 @@
 package Hanoi_Game.com;
-import java.util.ArrayList;
-import java.util.*;
+//import java.util.ArrayList;
+//import java.util.*;
 
 public class HanoiGame 
 {
@@ -65,8 +65,10 @@ public class HanoiGame
 		}
 	}
 //------------------------GAME-----------------------------
-	public void play()
+	public void moveDisc(int a, int b)
 	{
+		int hv;
+		for 
 		
 	}
 }
