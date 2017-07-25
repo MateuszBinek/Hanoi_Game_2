@@ -65,10 +65,10 @@ public class HanoiGame
 		}
 	}
 //------------------------GAME-----------------------------
-	public void moveDisc(int a, int b)
+	/*public void moveDisc(int a, int b)
 	{
 		int hv;
 		for 
 		
-	}
+	}*/
 }
