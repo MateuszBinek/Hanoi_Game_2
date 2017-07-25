@@ -71,7 +71,7 @@ public class HanoiGame
 	public void showWinStick(Disc stick[])
 	{
 		// STICK WIN
-		System.out.print("STICK WIN -");
+		System.out.print("\nSTICK WIN -");
 		for (int n=0; n<stick.length; n++)
 		{
 			System.out.print(" " + stick[n].getNumber());
@@ -79,24 +79,26 @@ public class HanoiGame
 		
 	}
 //---------------------------------------------------------
-	public boolean comparisonSticks(Disc[] st1, Disc[] st2)
+	public int comparisonSticks(int nod, Disc[] stick)
 	{
 		int x = 0;
-		for (int i=0; i<st1.length ; i++)
+		int hv = nod;
+		
+		for (int i=0; i<stick.length ; i++)
 		{
-			if (st1[i].getNumber() != st2[i].getNumber())
+			
+			if (stick[i].getNumber() == hv)
 				{
-				x=0;
+				x = x+1;
 				}	
 			else
 			{
-				x=1;
+				x = x+0;
 			}
+			hv--;
 		}
-		if (x==1)
-			return true;
-		else
-			return false;
+		
+			return x;
 	}
 //------------------------GAME-----------------------------
 	/*public void moveDisc(int a, int b)

@@ -33,6 +33,7 @@ public class HanoiAplication {
 		Game.generateSticks(Game.getNumberOfDiscs(), stick1, stick2, stick3, stickWin);
 		//System.arraycopy(stick1, 0, stickWin, 0, stick1.length);
 		Game.showSticks(stick1,stick2,stick3);
+		Game.showWinStick(stickWin);
 //---------------------------------------------------------		
 		/*int x = 0;
 		
@@ -52,23 +53,33 @@ public class HanoiAplication {
 			};*/
 		
 		
-		boolean resoult = false;
+		int resoult = 0;
+		int licznik = 0;
 		do
 		{
-			
-			if(Game.comparisonSticks(stick2, stickWin) || Game.comparisonSticks(stick3, stickWin))
-				{resoult = true;}
+			if(Game.comparisonSticks(Game.getNumberOfDiscs(), stick2) == Game.getNumberOfDiscs())
+				{
+				resoult = 0;
+				}
+			else if (Game.comparisonSticks(Game.getNumberOfDiscs(), stick3) == Game.getNumberOfDiscs())
+			{
+				resoult = 0;
+			}
 			else
-				{resoult = false;}
-			System.out.println("Komunikat");
-			int zmienna = write.nextInt();
+				{
+				resoult = 1;
+				licznik++;
+				System.out.println("Komunikat");
+				int zmienna = write.nextInt();
+				}
+			
 		}
-		while (resoult == true);
+		while (resoult == 0);
 		{
-			System.out.println("\nCongratulations. You win!");
+			System.out.println("\nCongratulations. You win!" + licznik);
 		};
 //---------------------------------------------------------
-		Game.showWinStick(stickWin);
+		
 		write.close();
 	}
 
