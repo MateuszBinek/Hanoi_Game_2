@@ -101,10 +101,33 @@ public class HanoiGame
 			return x;
 	}
 //------------------------GAME-----------------------------
-	/*public void moveDisc(int a, int b)
+	
+//-------- VALID
+	boolean validMove(int from, int to)
 	{
-		int hv;
-		for 
+		return true;
+	}
+//-------- DELETE	
+	void deleteDisc(int from)
+	{
 		
-	}*/
+	}
+//--------	SET
+	void setDisc(int to)
+	{
+		
+	}
+//-------- MOVE
+	void moveDisk(int from, int to)
+	{
+		boolean canMove = validMove(from, to);
+		if(canMove)
+		{
+		deleteDisc(from);
+		setDisc(to);
+		}
+	}
+	
+//---------------------------------------------------------
+
 }
