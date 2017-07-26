@@ -70,7 +70,7 @@ public class HanoiAplication {
 				resoult = 1;
 				licznik++;
 				System.out.println("Komunikat");
-				int zmienna = write.nextInt();
+				//int zmienna = write.nextInt();
 				}
 			
 		}
